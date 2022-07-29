@@ -28,12 +28,12 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         val listCard = listOf(
+            ServiceItemModel(id = "6", image = R.drawable.vegetales, title = "Vegetales gourmet"),
+            ServiceItemModel(id = "3", image = R.drawable.hamburguesa, title = "Mega hamburguesa"),
             ServiceItemModel(id = "1", image = R.drawable.pizza, title = "Pizza especial"),
             ServiceItemModel(id = "2", image = R.drawable.brochetas, title = "Brochetas ahumadas"),
-            ServiceItemModel(id = "3", image = R.drawable.hamburguesa, title = "Mega hamburguesa"),
             ServiceItemModel(id = "4", image = R.drawable.sushi, title = "Rollo primevera"),
-            ServiceItemModel(id = "5", image = R.drawable.tacos, title = "Tacos de carne"),
-            ServiceItemModel(id = "6", image = R.drawable.vegetales, title = "Vegetales gourmet")
+            ServiceItemModel(id = "5", image = R.drawable.tacos, title = "Tacos de carne")
         )
 
         val list = listOf(

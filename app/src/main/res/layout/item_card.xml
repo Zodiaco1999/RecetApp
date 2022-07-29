@@ -7,7 +7,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/recipe_card"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,26 +16,43 @@
         app:cardElevation="@dimen/card_elevation"
         android:layout_marginTop="@dimen/default_margin">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/item_service_image"
-            android:layout_width="122dp"
-            android:layout_height="129dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/vegetales" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/item_service_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/item_service_image"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                tools:src="@drawable/vegetales"
+                android:scaleType="fitXY"/>
 
-            android:fontFamily="@font/roboto_bold"
-            android:textColor="@color/secondaryDark"
-            tools:text="Vegetales frescos"
-            />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_service_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/secondaryDark"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Vegetales frescos"
+                app:layout_constraintTop_toBottomOf="@id/item_service_image"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginLeft="@dimen/default_margin"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/item_card_button"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_service_title"
+                android:text="cocinar"
+                android:textSize="10dp"
+                app:backgroundTint="@color/secondaryDark"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginHorizontal="@dimen/default_margin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

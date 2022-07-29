@@ -30,4 +30,6 @@
     <string name="favorites_fragment_label">Favoritos</string>
     <string name="search_fragment_label">Buscar</string>
     <string name="home_fragment_subtitle">Las mejores</string>
+    <string name="home_fragment_specail">Especial del día</string>
+    <string name="button_see_all">ver todas</string>
 </resources>
