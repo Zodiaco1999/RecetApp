@@ -32,4 +32,8 @@
     <string name="home_fragment_subtitle">Las mejores</string>
     <string name="home_fragment_specail">Especial del día</string>
     <string name="button_see_all">ver todas</string>
+    <string name="get_started">Comencemos</string>
+    <string name="profile_label">Editar perfil</string>
+    <string name="new_name_label">Ingrese un nuevo Nombre</string>
+    <string name="cancel_label">Cancelar</string>
 </resources>
