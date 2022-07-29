@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mintic22g1.recetapp.databinding.FragmentHomeBinding
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
@@ -48,7 +49,8 @@ class HomeFragment : Fragment() {
         val cardAdapter = CardAdapter(listCard)
         cardAdapter.listener = object : OnServiceClickListener {
             override fun onClick(item: ServiceItemModel) {
-                Log.d("HOLA", item.title.toString())
+                cardAdapter.selected(item)
+                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
 
             }
         }
@@ -56,8 +58,8 @@ class HomeFragment : Fragment() {
         val serviceAdapter = ServiceAdapter(list)
         serviceAdapter.listener = object : OnServiceClickListener {
             override fun onClick(item: ServiceItemModel) {
-                Log.d("HOLA", item.id)
-
+                serviceAdapter.selected(item)
+                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
             }
         }
 

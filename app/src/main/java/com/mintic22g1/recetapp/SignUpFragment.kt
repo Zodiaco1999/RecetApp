@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.mintic22g1.recetapp.databinding.FragmentLoginBinding
 import com.mintic22g1.recetapp.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {

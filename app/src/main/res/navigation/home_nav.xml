@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.mintic22g1.recetapp.HomeFragment"
         android:label="@string/home_fragment_label"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_recetapDetailFragment"
+            app:destination="@id/recetapDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.mintic22g1.recetapp.ProfileFragment"
@@ -25,4 +29,9 @@
         android:name="com.mintic22g1.recetapp.SearchFragment"
         android:label="@string/search_fragment_label"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/recetapDetailFragment"
+        android:name="com.mintic22g1.recetapp.RecetapDetailFragment"
+        android:label="fragment_recetap_detail2"
+        tools:layout="@layout/fragment_recetap_detail" />
 </navigation>
