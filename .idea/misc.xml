@@ -26,6 +26,18 @@
         <entry key="..\:/Developing/MobileApp/RecetApp/app/src/main/res/layout/item_service.xml" value="0.22" />
         <entry key="..\:/Developing/MobileApp/RecetApp/app/src/main/res/menu/home_menu.xml" value="0.184375" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/drawable/ic_layout_recet_app.xml" value="0.1295" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_favorites.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_home.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_layout_recet_app.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_logo.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_profile.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_rectanglereviews_foto.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/drawable/ic_search.xml" value="0.3525" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/layout/fragment_favorites.xml" value="0.36666666666666664" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/layout/fragment_recetap_detail.xml" value="0.33106884057971014" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/layout/fragment_recetap_detail2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/layout/item_card.xml" value="0.36666666666666664" />
+        <entry key="..\:/Varios/mintic/RecetApp/app/src/main/res/layout/item_service.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

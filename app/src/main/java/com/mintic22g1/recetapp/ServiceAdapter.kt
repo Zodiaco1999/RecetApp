@@ -4,6 +4,8 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.mintic22g1.recetapp.databinding.ItemCardBinding
 import com.mintic22g1.recetapp.databinding.ItemServiceBinding
@@ -18,6 +20,13 @@ class ServiceAdapter(val list: List<ServiceItemModel>) : RecyclerView.Adapter<Se
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return  ViewHolder(ItemServiceBinding.inflate(inflater, parent, false))
+    }
+
+    private var _selected: MutableLiveData<ServiceItemModel> = MutableLiveData()
+    val selected: LiveData<ServiceItemModel> get() = _selected
+
+    fun selected(item: ServiceItemModel){
+        _selected.postValue(item)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
