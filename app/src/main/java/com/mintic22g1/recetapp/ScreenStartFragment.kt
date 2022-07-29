@@ -1,5 +1,6 @@
 package com.mintic22g1.recetapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +26,9 @@ class ScreenStartFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.startButton.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+            val intent = Intent(context, HomeActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 }

@@ -31,7 +31,6 @@ class LoginFragment : Fragment() {
 
         binding.loginForgotButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotFragment)
-
         }
 
         binding.loginButton.setOnClickListener {
@@ -48,9 +47,10 @@ class LoginFragment : Fragment() {
             }
 
             if(binding.loginEmail.text.toString().isValidEmail() && binding.loginPassword.text.toString().isValidPassword()){
-                val intent = Intent(context, HomeActivity::class.java)
-                startActivity(intent)
-                requireActivity().finish()
+                findNavController().navigate(R.id.action_loginFragment_to_screenStartFragment)
+//                val intent = Intent(context, HomeActivity::class.java)
+//                startActivity(intent)
+//                requireActivity().finish()
             }
         }
     }

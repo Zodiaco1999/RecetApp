@@ -10,7 +10,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
         android:layout_width="0dp"
-        android:layout_height="@dimen/large_image"
+        android:layout_height="330dp"
         android:layout_margin="@dimen/mar_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
