@@ -34,4 +34,9 @@
         android:name="com.mintic22g1.recetapp.ui.fragments.RecetapDetailFragment"
         android:label="fragment_recetap_detail2"
         tools:layout="@layout/fragment_recetap_detail" />
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" />
 </navigation>
