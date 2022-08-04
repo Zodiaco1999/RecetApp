@@ -1,4 +1,4 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.data.models
 
 data class ServiceItemModel(
     val id: String,

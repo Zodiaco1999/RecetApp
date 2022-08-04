@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.mintic22g1.recetapp.LoginFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.mintic22g1.recetapp.SignUpFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotFragment"
-        android:name="com.mintic22g1.recetapp.ForgotFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.ForgotFragment"
         android:label="fragment_forgot"
         tools:layout="@layout/fragment_forgot" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/screenStartFragment"
-        android:name="com.mintic22g1.recetapp.ScreenStartFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.ScreenStartFragment"
         android:label="fragment_screen_start"
         tools:layout="@layout/fragment_screen_start" />
 </navigation>

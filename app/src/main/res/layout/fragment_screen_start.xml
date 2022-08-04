@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ScreenStartFragment"
+    tools:context=".ui.fragments.ScreenStartFragment"
     android:background="@drawable/ic_layout_recet_app">
 
     <com.google.android.material.imageview.ShapeableImageView

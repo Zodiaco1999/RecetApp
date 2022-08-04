@@ -1,4 +1,4 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.mintic22g1.recetapp.R
 import com.mintic22g1.recetapp.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment() {

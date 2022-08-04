@@ -1,15 +1,13 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.adapters
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.mintic22g1.recetapp.data.models.ServiceItemModel
 import com.mintic22g1.recetapp.databinding.ItemCardBinding
-import com.mintic22g1.recetapp.databinding.ItemServiceBinding
-import java.util.Collections.list
+import com.mintic22g1.recetapp.interfaces.OnServiceClickListener
 
 class CardAdapter(val list: List<ServiceItemModel>) : RecyclerView.Adapter<CardAdapter.ViewHolder>()  {
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mintic22g1.recetapp.HomeFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.HomeFragment"
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,22 +16,22 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.mintic22g1.recetapp.ProfileFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.ProfileFragment"
         android:label="@string/profile_fragment_label"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.mintic22g1.recetapp.FavoritesFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.FavoritesFragment"
         android:label="@string/favorites_fragment_label"
         tools:layout="@layout/fragment_favorites" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.mintic22g1.recetapp.SearchFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.SearchFragment"
         android:label="@string/search_fragment_label"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/recetapDetailFragment"
-        android:name="com.mintic22g1.recetapp.RecetapDetailFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.RecetapDetailFragment"
         android:label="fragment_recetap_detail2"
         tools:layout="@layout/fragment_recetap_detail" />
 </navigation>

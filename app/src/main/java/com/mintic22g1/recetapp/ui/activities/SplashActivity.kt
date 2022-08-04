@@ -1,11 +1,10 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.activities
 
 import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import com.mintic22g1.recetapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

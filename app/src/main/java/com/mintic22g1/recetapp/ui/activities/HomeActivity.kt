@@ -1,10 +1,11 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.mintic22g1.recetapp.R
 import com.mintic22g1.recetapp.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -21,7 +22,12 @@ class HomeActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val navController = findNavController(R.id.nav_host_home_fragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.profileFragment, R.id.favoritesFragment, R.id.searchFragment))
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.homeFragment,
+            R.id.profileFragment,
+            R.id.favoritesFragment,
+            R.id.searchFragment
+        ))
         binding.homeNavigation.setupWithNavController(navController)
         binding.homeToolbar.setupWithNavController(navController, appBarConfiguration)
     }

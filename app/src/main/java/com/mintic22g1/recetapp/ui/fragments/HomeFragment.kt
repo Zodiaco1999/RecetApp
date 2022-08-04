@@ -1,15 +1,18 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.mintic22g1.recetapp.ui.adapters.CardAdapter
+import com.mintic22g1.recetapp.R
+import com.mintic22g1.recetapp.ui.adapters.ServiceAdapter
+import com.mintic22g1.recetapp.data.models.ServiceItemModel
 import com.mintic22g1.recetapp.databinding.FragmentHomeBinding
+import com.mintic22g1.recetapp.interfaces.OnServiceClickListener
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
 
 class HomeFragment : Fragment() {

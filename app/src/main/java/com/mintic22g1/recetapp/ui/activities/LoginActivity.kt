@@ -1,4 +1,4 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

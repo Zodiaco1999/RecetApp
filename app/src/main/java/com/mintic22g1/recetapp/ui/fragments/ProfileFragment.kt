@@ -1,4 +1,4 @@
-package com.mintic22g1.recetapp
+package com.mintic22g1.recetapp.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
