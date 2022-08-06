@@ -25,6 +25,7 @@
         <entry key="..\:/Developing/MobileApp/RecetApp/app/src/main/res/layout/item_card.xml" value="0.16304347826086957" />
         <entry key="..\:/Developing/MobileApp/RecetApp/app/src/main/res/layout/item_service.xml" value="0.22" />
         <entry key="..\:/Developing/MobileApp/RecetApp/app/src/main/res/menu/home_menu.xml" value="0.184375" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/drawable/ic_categories.xml" value="0.1405" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/drawable/ic_food.xml" value="0.1425" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/drawable/ic_home.xml" value="0.1545" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1545" />
@@ -36,16 +37,21 @@
         <entry key="..\:/Repos/RecetApp/app/src/main/res/font/roboto_bold.xml" value="0.23020833333333332" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/font/roboto_medium.xml" value="0.23020833333333332" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/activity_login.xml" value="0.14427083333333332" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/activity_splash.xml" value="0.16458333333333333" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_categories.xml" value="0.25" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_favorites.xml" value="0.16458333333333333" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_login.xml" value="0.21" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_recetap_detail.xml" value="0.17753623188405798" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_recetap_detail.xml" value="0.33" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_screen_start.xml" value="0.25" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_search.xml" value="0.184375" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.14427083333333332" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_update_profile.xml" value="0.14606741573033707" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/item_button.xml" value="0.67" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/item_card.xml" value="0.33" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/item_recipe.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/item_service.xml" value="0.184375" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/menu/home_menu.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/mipmap-anydpi-v26/ic_burger.xml" value="0.1255" />

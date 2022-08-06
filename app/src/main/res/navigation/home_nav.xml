@@ -25,18 +25,22 @@
         android:label="@string/favorites_fragment_label"
         tools:layout="@layout/fragment_favorites" />
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.mintic22g1.recetapp.ui.fragments.SearchFragment"
-        android:label="@string/search_fragment_label"
-        tools:layout="@layout/fragment_search" />
-    <fragment
         android:id="@+id/recetapDetailFragment"
         android:name="com.mintic22g1.recetapp.ui.fragments.RecetapDetailFragment"
-        android:label="fragment_recetap_detail2"
+        android:label="@string/recetap_detail_fragment_label"
         tools:layout="@layout/fragment_recetap_detail" />
     <fragment
         android:id="@+id/updateProfileFragment"
         android:name="com.mintic22g1.recetapp.ui.fragments.UpdateProfileFragment"
-        android:label="fragment_update_profile"
+        android:label="@string/update_profile_fragment_label"
         tools:layout="@layout/fragment_update_profile" />
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.mintic22g1.recetapp.ui.fragments.CategoriesFragment"
+        android:label="@string/categories_fragment_label"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_categoriesFragment_to_recetapDetailFragment"
+            app:destination="@id/recetapDetailFragment" />
+    </fragment>
 </navigation>

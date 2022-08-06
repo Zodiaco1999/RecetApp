@@ -22,27 +22,40 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/recetap_detail_fragment_name"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/secondaryDark"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            app:layout_constraintEnd_toStartOf="@id/recetap_detail_fragment_rating"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_image"
             tools:text="All American Breakfast" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/recetap_detail_fragment_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/primaryVariant"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_name"
+            tools:text="Vegetales" />
         <RatingBar
             android:id="@+id/recetap_detail_fragment_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/recetap_detail_fragment_name"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_image"
+            app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_category"
             android:isIndicator="true"
             android:numStars="5"
             tools:rating="4"
             style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginTop="@dimen/small_margin"
             >
 
         </RatingBar>
@@ -52,13 +65,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_name"
+            app:layout_constraintTop_toBottomOf="@id/recetap_detail_fragment_rating"
             android:layout_margin="@dimen/default_margin"
             android:layout_marginTop="@dimen/small_margin"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:fontFamily="@font/roboto_bold"
-            android:text="Description"
-
+            android:text="Ingredientes"
             />
 
         <com.google.android.material.textview.MaterialTextView

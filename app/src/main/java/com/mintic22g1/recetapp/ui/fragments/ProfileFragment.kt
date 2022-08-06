@@ -11,16 +11,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.mintic22g1.recetapp.R
+import com.mintic22g1.recetapp.data.viewmodels.LoginViewModel
 import com.mintic22g1.recetapp.databinding.FragmentProfileBinding
 import com.mintic22g1.recetapp.ui.activities.LoginActivity
 import com.mintic22g1.recetapp.utils.CAMERA_PERMISSION_CODE
 import com.mintic22g1.recetapp.utils.REQUEST_IMAGE_CODE
 import com.mintic22g1.recetapp.utils.checkPermission
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding: FragmentProfileBinding get() = _binding!!
+
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +41,7 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.currentUser()
         binding.profileFragmentLogout.setOnClickListener {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
@@ -45,7 +54,11 @@ class ProfileFragment : Fragment() {
                 openCamera()
             }
         }
+
+        observeViewModels()
     }
+
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -76,5 +89,19 @@ class ProfileFragment : Fragment() {
         }catch (e: ActivityNotFoundException) {
 
         }
+    }
+
+    private fun observeViewModels() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer {
+            binding.profileFragmentEmail.text = it.email
+            binding.profileFragmentName.text = it.name
+            binding.profileFragmentGender.text = it.gender
+            if (it.image != null){
+                Glide.with(this).load(it.image).into(binding.profileFragmentImage)
+
+            } else {
+                binding.profileFragmentImage.setImageResource(R.drawable.ca_pork)
+            }
+        })
     }
 }

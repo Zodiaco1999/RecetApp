@@ -9,7 +9,7 @@ import com.mintic22g1.recetapp.data.models.ServiceItemModel
 import com.mintic22g1.recetapp.databinding.ItemCardBinding
 import com.mintic22g1.recetapp.interfaces.OnServiceClickListener
 
-class CardAdapter(val list: List<ServiceItemModel>) : RecyclerView.Adapter<CardAdapter.ViewHolder>()  {
+class CardAdapter(var list: List<ServiceItemModel>) : RecyclerView.Adapter<CardAdapter.ViewHolder>()  {
 
     var listener: OnServiceClickListener? = null
 
@@ -39,5 +39,10 @@ class CardAdapter(val list: List<ServiceItemModel>) : RecyclerView.Adapter<CardA
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    fun changeDataSet(list: List<ServiceItemModel>){
+        this.list = list
+        notifyDataSetChanged()
     }
 }

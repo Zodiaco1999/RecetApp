@@ -5,20 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mintic22g1.recetapp.ui.adapters.CardAdapter
 import com.mintic22g1.recetapp.R
 import com.mintic22g1.recetapp.ui.adapters.ServiceAdapter
 import com.mintic22g1.recetapp.data.models.ServiceItemModel
+import com.mintic22g1.recetapp.data.viewmodels.HomeViewModel
 import com.mintic22g1.recetapp.databinding.FragmentHomeBinding
 import com.mintic22g1.recetapp.interfaces.OnServiceClickListener
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding get() = _binding!!
+    private lateinit var cardAdapter: CardAdapter
+//    private lateinit var serviceAdapter: ServiceAdapter
+    private val homeViewModel: HomeViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,14 +38,7 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val listCard = listOf(
-            ServiceItemModel(id = "6", image = R.drawable.vegetales, title = "Vegetales gourmet"),
-            ServiceItemModel(id = "3", image = R.drawable.hamburguesa, title = "Mega hamburguesa"),
-            ServiceItemModel(id = "1", image = R.drawable.pizza, title = "Pizza especial"),
-            ServiceItemModel(id = "2", image = R.drawable.brochetas, title = "Brochetas ahumadas"),
-            ServiceItemModel(id = "4", image = R.drawable.sushi, title = "Rollo primevera"),
-            ServiceItemModel(id = "5", image = R.drawable.tacos, title = "Tacos de carne")
-        )
+        homeViewModel.services()
 
         val list = listOf(
             ServiceItemModel(id = "1", image = R.drawable.pizza),
@@ -49,11 +49,12 @@ class HomeFragment : Fragment() {
             ServiceItemModel(id = "6", image = R.drawable.vegetales)
         )
 
-        val cardAdapter = CardAdapter(listCard)
+        cardAdapter = CardAdapter(listOf())
         cardAdapter.listener = object : OnServiceClickListener {
             override fun onClick(item: ServiceItemModel) {
                 cardAdapter.selected(item)
-                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
+
+//                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
 
             }
         }
@@ -62,7 +63,8 @@ class HomeFragment : Fragment() {
         serviceAdapter.listener = object : OnServiceClickListener {
             override fun onClick(item: ServiceItemModel) {
                 serviceAdapter.selected(item)
-                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
+
+//                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
             }
         }
 
@@ -77,5 +79,13 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
         binding.homeFragmentRecycler.itemAnimator = SlideInLeftAnimator()
+
+        observeViewModels()
+    }
+
+    private fun observeViewModels() {
+        homeViewModel.service.observe(viewLifecycleOwner, Observer {
+            cardAdapter.changeDataSet(it)
+        })
     }
 }

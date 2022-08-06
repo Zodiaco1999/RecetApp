@@ -28,7 +28,9 @@
     <string name="home_fragment_label">Inicio</string>
     <string name="profile_fragment_label">Perfil</string>
     <string name="favorites_fragment_label">Favoritos</string>
-    <string name="search_fragment_label">Buscar</string>
+    <string name="categories_fragment_label">Categorias</string>
+    <string name="recetap_detail_fragment_label">Detalles</string>
+    <string name="update_profile_fragment_label">Actualizar Perfil</string>
     <string name="home_fragment_subtitle">Las mejores</string>
     <string name="home_fragment_specail">Especial del día</string>
     <string name="button_see_all">ver todas</string>
@@ -37,4 +39,6 @@
     <string name="new_name_label">Ingrese un nuevo Nombre</string>
     <string name="cancel_label">Cancelar</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="recipes_by_categories">Tus recetas por categoria</string>
+    <string name="fragment_categories_subtitle">Las mejores recetas para que hagas feliz a tu familia y a tu estomago</string>
 </resources>

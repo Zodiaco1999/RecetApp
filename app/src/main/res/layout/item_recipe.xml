@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/item_recipe_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/mar_big"
+        android:adjustViewBounds="true"
+        tools:srcCompat="@drawable/re_fruits_2"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/circleImageView"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_recipe_name"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:fontFamily="@font/roboto_bold"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/primaryVariant"
+        app:layout_constraintStart_toEndOf="@id/item_recipe_image"
+        app:layout_constraintTop_toTopOf="@id/item_recipe_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Cupcake de banano con arequipe" />
+
+    <RatingBar
+        android:id="@+id/item_recipe_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/item_recipe_image"
+        android:numStars="1"
+        android:rating="1"
+        android:isIndicator="true"
+        style="?android:attr/ratingBarStyleSmall"
+        app:layout_constraintTop_toBottomOf="@id/item_recipe_name"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_recipe_sumary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:fontFamily="@font/roboto"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/secondaryDark"
+        app:layout_constraintStart_toStartOf="@id/item_recipe_star"
+        app:layout_constraintTop_toTopOf="@id/item_recipe_star"
+        app:layout_constraintTop_toBottomOf="@id/item_recipe_name"
+        tools:text="5 estrellas - 85 min" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/item_recipe_image"
+        android:background="@color/primary"
+        />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

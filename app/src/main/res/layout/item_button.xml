@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:icon="@drawable/ic_food"
+        app:icon="@drawable/ic_categories"
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_marginStart="@dimen/default_margin"
         tools:text="Hamburguesa"

@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
             R.id.homeFragment,
             R.id.profileFragment,
             R.id.favoritesFragment,
-            R.id.searchFragment
+            R.id.categoriesFragment
         ))
         binding.homeNavigation.setupWithNavController(navController)
         binding.homeToolbar.setupWithNavController(navController, appBarConfiguration)
