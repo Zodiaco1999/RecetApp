@@ -41,4 +41,5 @@
     <string name="logout">Cerrar sesión</string>
     <string name="recipes_by_categories">Tus recetas por categoria</string>
     <string name="fragment_categories_subtitle">Las mejores recetas para que hagas feliz a tu familia y a tu estomago</string>
+    <string name="favorites_recipes">Tus recetas Favoritas</string>
 </resources>

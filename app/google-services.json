@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "21701034715",
+    "project_id": "recetapp-30603",
+    "storage_bucket": "recetapp-30603.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21701034715:android:e01990f34e289783bb02fe",
+        "android_client_info": {
+          "package_name": "com.mintic22g1.recetapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21701034715-4po0i579bqad8uji4sm0alg127gt8qhs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr_3ZeiooF7j73e520JAJiIPeMGK7sBYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21701034715-4po0i579bqad8uji4sm0alg127gt8qhs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

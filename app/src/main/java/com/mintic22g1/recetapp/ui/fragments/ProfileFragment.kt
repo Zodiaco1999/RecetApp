@@ -18,6 +18,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.mintic22g1.recetapp.R
 import com.mintic22g1.recetapp.data.viewmodels.LoginViewModel
 import com.mintic22g1.recetapp.databinding.FragmentProfileBinding
+import com.mintic22g1.recetapp.ui.activities.HomeActivity
 import com.mintic22g1.recetapp.ui.activities.LoginActivity
 import com.mintic22g1.recetapp.utils.CAMERA_PERMISSION_CODE
 import com.mintic22g1.recetapp.utils.REQUEST_IMAGE_CODE
@@ -43,13 +44,11 @@ class ProfileFragment : Fragment() {
         super.onStart()
         loginViewModel.currentUser()
         binding.profileFragmentLogout.setOnClickListener {
-            val intent = Intent(requireContext(), LoginActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+            loginViewModel.logOut()
         }
 
         binding.profileFragmentImage.setOnClickListener {
-            if(this.checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE)) {
+            if (this.checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE)) {
                 //TODO: open camera
                 openCamera()
             }
@@ -59,26 +58,29 @@ class ProfileFragment : Fragment() {
     }
 
 
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode == CAMERA_PERMISSION_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == CAMERA_PERMISSION_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             //TODO: open camera
             openCamera()
         } else {
-            Snackbar.make(binding.root, "No se ha otorgado el permiso", Snackbar.LENGTH_LONG)
+            Snackbar.make(binding.root, "No se ha otorgado el permiso", Snackbar.LENGTH_LONG).show()
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == REQUEST_IMAGE_CODE) {
-            val extras = data!!.extras!!
-            val image = extras["data"] as Bitmap?
-            binding.profileFragmentImage.setImageBitmap(image)
+        if (requestCode == REQUEST_IMAGE_CODE) {
+            val extras = data?.extras
+            if(extras != null){
+                val image = extras["data"] as Bitmap?
+                if(image != null) {
+                    loginViewModel.uploadPhoto(image!!)
+                }
+            }
         }
     }
 
@@ -86,21 +88,27 @@ class ProfileFragment : Fragment() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         try {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CODE)
-        }catch (e: ActivityNotFoundException) {
+        } catch (e: ActivityNotFoundException) {
 
         }
     }
 
     private fun observeViewModels() {
         loginViewModel.user.observe(viewLifecycleOwner, Observer {
-            binding.profileFragmentEmail.text = it.email
-            binding.profileFragmentName.text = it.name
-            binding.profileFragmentGender.text = it.gender
-            if (it.image != null){
-                Glide.with(this).load(it.image).into(binding.profileFragmentImage)
-
+            if (it != null) {
+                binding.profileFragmentEmail.text = it.email
+                binding.profileFragmentName.text = it.name
+                binding.profileFragmentGender.text = it.gender
+                if (it.image != null) {
+                    Glide.with(this).load(it.image).into(binding.profileFragmentImage)
+                } else {
+                    binding.profileFragmentImage.setImageResource(R.drawable.ca_pork)
+                }
             } else {
-                binding.profileFragmentImage.setImageResource(R.drawable.ca_pork)
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                requireActivity().finish()
             }
         })
     }

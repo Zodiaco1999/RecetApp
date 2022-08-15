@@ -41,10 +41,11 @@
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/activity_splash.xml" value="0.16458333333333333" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_categories.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_favorites.xml" value="0.16458333333333333" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_forgot.xml" value="0.17391304347826086" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_login.xml" value="0.21" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_recetap_detail.xml" value="0.33" />
+        <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_recetap_detail.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_screen_start.xml" value="0.25" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_search.xml" value="0.184375" />
         <entry key="..\:/Repos/RecetApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.14427083333333332" />

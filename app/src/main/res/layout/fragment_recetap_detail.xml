@@ -82,10 +82,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginHorizontal="@dimen/default_margin"
             android:layout_marginTop="@dimen/small_margin"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/secondaryDark"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             android:fontFamily="@font/roboto"
             tools:text="American diner right at the heart of Dubai, we were super hungry and craved for something with generous portions and we got just that."
             />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/recetap_detail_fragment_coment_title"
             android:layout_width="wrap_content"

@@ -11,10 +11,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mintic22g1.recetapp.ui.adapters.CardAdapter
 import com.mintic22g1.recetapp.R
+import com.mintic22g1.recetapp.data.models.RecipeItemModel
 import com.mintic22g1.recetapp.ui.adapters.ServiceAdapter
 import com.mintic22g1.recetapp.data.models.ServiceItemModel
 import com.mintic22g1.recetapp.data.viewmodels.HomeViewModel
 import com.mintic22g1.recetapp.databinding.FragmentHomeBinding
+import com.mintic22g1.recetapp.interfaces.OnRecipeClickListener
 import com.mintic22g1.recetapp.interfaces.OnServiceClickListener
 import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -38,7 +40,21 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        homeViewModel.services()
+        cardAdapter = CardAdapter(listOf())
+        homeViewModel.recipes(null)
+        cardAdapter._listener = object : OnRecipeClickListener {
+            override fun onClick(item: RecipeItemModel) {
+                homeViewModel.recipeSelected(item)
+                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
+            }
+        }
+
+        binding.homeFragmentRecyclerCard.apply {
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = cardAdapter
+        }
+
+        binding.homeFragmentRecyclerCard.itemAnimator = SlideInLeftAnimator()
 
         val list = listOf(
             ServiceItemModel(id = "1", image = R.drawable.pizza),
@@ -49,30 +65,13 @@ class HomeFragment : Fragment() {
             ServiceItemModel(id = "6", image = R.drawable.vegetales)
         )
 
-        cardAdapter = CardAdapter(listOf())
-        cardAdapter.listener = object : OnServiceClickListener {
-            override fun onClick(item: ServiceItemModel) {
-                cardAdapter.selected(item)
-
-//                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
-
-            }
-        }
-
         val serviceAdapter = ServiceAdapter(list)
         serviceAdapter.listener = object : OnServiceClickListener {
             override fun onClick(item: ServiceItemModel) {
                 serviceAdapter.selected(item)
-
 //                findNavController().navigate(R.id.action_homeFragment_to_recetapDetailFragment)
             }
         }
-
-        binding.homeFragmentRecyclerCard.apply {
-            adapter = cardAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        }
-        binding.homeFragmentRecyclerCard.itemAnimator = SlideInLeftAnimator()
 
         binding.homeFragmentRecycler.apply {
             adapter = serviceAdapter
@@ -84,7 +83,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeViewModels() {
-        homeViewModel.service.observe(viewLifecycleOwner, Observer {
+        homeViewModel.recipe.observe(viewLifecycleOwner, Observer {
             cardAdapter.changeDataSet(it)
         })
     }

@@ -1,5 +1,6 @@
 package com.mintic22g1.recetapp.data.viewmodels
 
+import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,8 +20,8 @@ class LoginViewModel(private val repo: LoginRepository): ViewModel() {
     private var _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> get() = _error
 
-    private var _user: MutableLiveData<UserModel> = MutableLiveData()
-    val user: LiveData<UserModel> get() = _user
+    private var _user: MutableLiveData<UserModel?> = MutableLiveData()
+    val user: LiveData<UserModel?> get() = _user
 
     fun login(email: String, password: String){
         viewModelScope.launch {
@@ -48,6 +49,18 @@ class LoginViewModel(private val repo: LoginRepository): ViewModel() {
     fun currentUser() {
         viewModelScope.launch {
             _user.postValue(repo.currentUser())
+        }
+    }
+
+    fun logOut() {
+        viewModelScope.launch {
+            _user.postValue(repo.logOut())
+        }
+    }
+
+    fun uploadPhoto(image: Bitmap) {
+        viewModelScope.launch {
+            _user.postValue(repo.uploadPhoto(image))
         }
     }
 

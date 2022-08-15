@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.mintic22g1.recetapp.R
 import com.mintic22g1.recetapp.databinding.FragmentForgotBinding
 
@@ -23,8 +26,29 @@ class ForgotFragment : Fragment() {
         return binding.root
     }
 
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//    }
+
     override fun onStart() {
         super.onStart()
+        binding.forgotButton.setOnClickListener{
+            val email: String = binding.forgotEmail.text.toString().trim { it <= ' '}
+            if (email.isEmpty()) {
+                Snackbar.make(binding.root, "Por favor ingrese el correo electrónico", Snackbar.LENGTH_LONG).show()
+            } else {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if(task.isSuccessful){
+                            Snackbar.make(binding.root, "Se le ha enviado un correo de recuperación", Snackbar.LENGTH_LONG).show()
+                            findNavController().navigate(R.id.action_forgotFragment_to_loginFragment)
+                        } else {
+                            Snackbar.make(binding.root, task.exception!!.message.toString(), Snackbar.LENGTH_LONG).show()
+                        }
+                    }
+            }
+        }
+
         binding.forgotToSignup.setOnClickListener {
             findNavController().navigate(R.id.action_forgotFragment_to_signUpFragment)
         }

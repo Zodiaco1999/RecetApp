@@ -5,6 +5,6 @@ import com.mintic22g1.recetapp.data.repositories.LoginRepository
 import org.koin.dsl.module
 
 val repoModule = module {
-    single { LoginRepository() }
-    single { HomeRepository(get()) }
+    single { LoginRepository(get(), get(), get()) }
+    single { HomeRepository(get(), get(), get(), get()) }
 }

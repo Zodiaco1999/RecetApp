@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.mintic22g1.recetapp.data.viewmodels.HomeViewModel
 import com.mintic22g1.recetapp.databinding.FragmentRecetapDetailBinding
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -34,15 +35,19 @@ class RecetapDetailFragment : Fragment() {
 
     private fun observerViewModels(){
         homeViewModel.selected.observe(viewLifecycleOwner, Observer {
-            binding.recetapDetailFragmentImage.setImageResource(it.image)
+            Glide.with(binding.root).load(it.image).centerCrop().into(binding.recetapDetailFragmentImage)
             binding.recetapDetailFragmentName.text = it.name
             binding.recetapDetailFragmentCategory.text = it.category
             binding.recetapDetailFragmentRating.rating = it.star.toFloat()
+            if (it.ingredients != null){
+                binding.recetapDetailFragmentDescription.text = it.ingredients
+            } else {
+                binding.recetapDetailFragmentDescription.text = "American diner right at the heart of Dubai, we were super hungry and craved for something with generous portions and we got just that."
+            }
         })
-        binding.recetapDetailFragmentDescription.text = "American diner right at the heart of Dubai, we were super hungry and craved for something with generous portions and we got just that."
+
         binding.recetapDetailFragmentRatingComent.rating = (Math.random()*5).toFloat()
         binding.recetapDetailFragmentComentDays.text = (Math.random()*15).roundToInt().toString()+" Days Ago"
         binding.recetapDetailFragmentComent.text = "The staff was very outstanding in all aspects, very professional, helpful and was making sure you get the best choice as he was recommending various options"
-
     }
 }
